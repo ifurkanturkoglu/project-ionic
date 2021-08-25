@@ -1,5 +1,5 @@
 ion-content {
-    height: 100%;
+    height: calc(100% - 50px);
     width: 100%;
     margin-top: 5%;
     padding-top: 5%;
@@ -33,4 +33,11 @@ ion-button {
     --background: none;
     border-bottom: 2px white solid;
     --border-width: 0px;
+    margin-top: 1%;
+    width: 20%;
+    margin-left: calc(50% - (20% / 2));
+}
+
+.fa-chart-line, .fa-bookmark, .fa-sign-out-alt {
+    margin-right: 5%;
 }
