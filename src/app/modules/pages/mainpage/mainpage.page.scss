@@ -1,0 +1,20 @@
+ion-header{
+    height: 50px;
+    text-align: center;
+}
+ion-slides{
+    background-color: gray;
+    height: 35%;
+    position: relative;
+}
+ion-button{
+    width: 100%;
+    height: 100%;
+    padding-bottom: 5px;
+}
+ion-grid{
+    padding: 0;
+}
+ion-col{
+    --ion-grid-column-padding:0;
+}
