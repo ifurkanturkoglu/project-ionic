@@ -1,8 +1,6 @@
 ion-content {
     height: calc(100% - 50px);
-    width: 100%;
-    margin-top: 5%;
-    padding-top: 5%;
+    width: 100%;    
 }
 
 ion-avatar {
@@ -32,16 +30,17 @@ ion-button {
 }
 
 .editButtons {
+    width: 45px;
+    height: 45px;
+    margin-top: 1%;    
+    margin-left: calc(50% - (45px / 2));
     --background: none;
     border-bottom: 2px white solid;
     --border-width: 0px;
     outline: none;
-    margin-top: 1%;
-    width: 45px;
-    height: 45px;
-    margin-left: calc(50% - (20% / 2));
+    text-decoration: none;
 }
 
-.fa-chart-line, .fa-bookmark, .fa-sign-out-alt {
+.fa-chart-line, .fa-bookmark, .fa-sign-out-alt, ion-icon {
     margin-right: 5%;
 }
