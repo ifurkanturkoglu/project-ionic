@@ -1,6 +1,6 @@
 <ion-app>
   <ion-header>
-    <ion-button fill=clear  style="float:left; font-size: 29px;  padding-top: 7px; max-width: 4px; color: aliceblue;">
+    <ion-button (click)="openFirst()" fill=clear  style="float:left; font-size: 29px;  padding-top: 7px; max-width: 4px; color: aliceblue;">
       <i class="fas fa-bars"></i>
     </ion-button>
     <p style="height: auto; width: fit-content; position: relative; display: inline-block;">TestManager</p>
@@ -8,6 +8,20 @@
   <ion-content>
     <ion-router-outlet></ion-router-outlet>
   </ion-content>
+  <ion-menu side="start" menuId="first" contentId="main">
+    <ion-header>
+      <ion-toolbar color="primary">
+        <ion-title>KullanıcıAdı</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-item>
+          deneme
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
 </ion-app>
 
 
