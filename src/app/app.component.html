@@ -1,27 +1,69 @@
 <ion-app>
+
+  <ion-menu side="start" menuId="menuBar" contentId="main" class="menuBar">
+    <ion-header>
+      <ion-toolbar style="background: none;" color="tertiary">
+        <ion-buttons slot="start" style="position:fixed; display:inline-block; top: 4px; border: 5px #ffffff52 solid; border-radius: 50%;">
+          <ion-back-button (click)="url();closeCustom()" defaultHref="currentUrl"></ion-back-button>
+        </ion-buttons>
+        <ion-img style=" display: inline-block; position: relative;" src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/c895b691-d4d0-42ec-b39f-b23595a1d435/delyqug-c2944b5f-2f69-4b64-b4c8-0d62fdcd6908.jpg/v1/fill/w_1024,h_586,q_75,strp/elemental_do_ar_by_vityso_delyqug-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NTg2IiwicGF0aCI6IlwvZlwvYzg5NWI2OTEtZDRkMC00MmVjLWIzOWYtYjIzNTk1YTFkNDM1XC9kZWx5cXVnLWMyOTQ0YjVmLTJmNjktNGI2NC1iNGM4LTBkNjJmZGNkNjkwOC5qcGciLCJ3aWR0aCI6Ijw9MTAyNCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.0-oHB5Cg8-HqsV8jAKtnK8alG6boWUQmSXK9bbzKrQY"></ion-img>
+        <ion-title>KullaniciAdi</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list style="background: tertiary;">
+        <ion-button expand="block">
+          <i class="fas fa-home"></i>
+          <span>Anasayfa</span>
+        </ion-button>
+        <br>
+        <ion-button expand="block">
+          <i class="fas fa-address-book"></i>
+          <span>Profil</span>
+        </ion-button>
+        <br>
+        <ion-button expand="block">
+          <i class="fas fa-book"></i>
+          <span>Dersler</span>
+        </ion-button>
+        <br>
+        <ion-button expand="block">
+          <i class="fas fa-chart-line"></i>
+          <span>İstatistikler</span>
+        </ion-button>
+        <br>
+        <ion-button expand="block">
+          <i class="fas fa-calendar-alt"></i>
+          <span>Ajandam</span>
+        </ion-button>
+        <br>
+        <ion-button expand="block">
+          <i class="fas fa-users"></i>
+          <span>Gruplar</span>
+        </ion-button>
+        <br>
+        <ion-button expand="block">
+          <i class="fas fa-cog"></i>
+          <span>Ayarlar</span>
+        </ion-button>
+        <br>
+        <ion-button expand="block">
+          <i class="fas fa-sign-out-alt"></i>
+          <span>Çıkış</span>
+        </ion-button>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+
   <ion-header>
-    <ion-button (click)="openFirst()" fill=clear  style="float:left; font-size: 29px;  padding-top: 7px; max-width: 4px; color: aliceblue;">
+    <ion-button (click)="openCustom()" fill=clear  class="menuBtn" style="float:left; font-size: 29px;  padding-top: 7px; max-width: 4px; color: aliceblue;">
       <i class="fas fa-bars"></i>
     </ion-button>
     <p style="height: auto; width: fit-content; position: relative; display: inline-block;">TestManager</p>
   </ion-header>
   <ion-content>
-    <ion-router-outlet></ion-router-outlet>
+    <ion-router-outlet id="main"></ion-router-outlet>
   </ion-content>
-  <ion-menu side="start" menuId="first" contentId="main">
-    <ion-header>
-      <ion-toolbar color="primary">
-        <ion-title>KullanıcıAdı</ion-title>
-      </ion-toolbar>
-    </ion-header>
-    <ion-content>
-      <ion-list>
-        <ion-item>
-          deneme
-        </ion-item>
-      </ion-list>
-    </ion-content>
-  </ion-menu>
 </ion-app>
 
 

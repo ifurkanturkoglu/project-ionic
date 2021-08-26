@@ -2,3 +2,26 @@ ion-header{
   background-color: rgb(39, 85, 236);
   text-align: center;
 }
+.menuBar{
+  --width: 80%;
+}
+ion-button{
+  margin-bottom: -15px;
+  --background:rgb(99, 99, 240);
+}
+.menuBtn{
+  --background:rgb(39, 85, 236);
+}
+ion-list{
+  height: 100%;
+  padding-top: 5vh;
+}
+i{
+  left: 23%;
+  position: fixed;
+  font-size: 28px;
+}
+ion-toolbar{
+  --background:none;
+  --border-style: none;
+}
