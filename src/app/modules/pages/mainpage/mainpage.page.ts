@@ -13,6 +13,7 @@ export class MainpagePage implements OnInit {
   ngOnInit() {
   }
 
+  // eslint-disable-next-line @typescript-eslint/member-ordering
   slideOpts = {
     initialSlide: 1,
     speed: 400

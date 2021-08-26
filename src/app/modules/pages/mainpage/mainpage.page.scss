@@ -1,17 +1,36 @@
-
 ion-slides{
     background-color: gray;
-    height: 35%;
+    height: 36.5%;
     position: relative;
 }
 ion-button{
     width: 100%;
     height: 100%;
-    padding-bottom: 5px;
+    --background:#ECF0F1;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    --border-radius:1px;
+
+}
+ion-button:hover{
+  --background-hover:blue;
+}
+ion-button p{
+  margin-top: 58px;
+  font-size: 16px;
+  color: black;
+}
+ion-button i{
+  position: fixed;
+  margin-top: -30px;
+  font-size: 45px;
+  width: 60px;
+  height: 55px;
 }
 ion-grid{
     padding: 0;
 }
 ion-col{
     --ion-grid-column-padding:0;
+    height: 130px;
 }
