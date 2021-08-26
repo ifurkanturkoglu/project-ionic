@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AlertController} from '@ionic/angular';
 
 @Component({
   selector: 'app-profilepage',
@@ -7,9 +8,34 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfilepagePage implements OnInit {
 
-  constructor() { }
+  constructor(public alertController: AlertController) { }
 
   ngOnInit() {
+  }
+
+  async logout() {
+    const alert = await this.alertController.create({
+      cssClass: 'my-custom-class',
+      header: 'Çıkış Yapılıyor...',
+      message: '<strong>Onaylıyor musunuz ?</strong>',
+      buttons: [
+        {
+          text: 'Evet',
+          cssClass: 'secondary',
+          handler: (blah) => {
+            console.log('Confirm Okay');            
+          }
+        }, {
+          text: 'Hayır',
+          role: 'cancel',
+          handler: () => {
+            console.log('Confirm Cancel: blah');            
+          }
+        }
+      ]
+    });
+
+    await alert.present();
   }
 
 }
