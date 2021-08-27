@@ -1,0 +1,29 @@
+<ion-content>
+
+  <ion-slides pager="true" [options]="slideOpts">
+    <ion-slide *ngFor="let i of array">
+      <ion-grid>
+        <ion-row>
+          <ion-card>
+            <ion-card-header>
+              <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+              <ion-card-title>Card Title {{i}}</ion-card-title>
+            </ion-card-header>
+
+            <ion-card-content>
+              Keep close to Nature's heart... and break clear away, once in awhile,
+              and climb a mountain or spend a week in the woods. Wash your spirit clean.
+            </ion-card-content>
+          </ion-card>
+        </ion-row>
+        <ion-row>
+          <ion-button shape="round">A</ion-button>
+          <ion-button shape="round">B</ion-button>
+          <ion-button shape="round">C</ion-button>
+          <ion-button shape="round">D</ion-button>
+          <ion-button shape="round">E</ion-button>
+        </ion-row>
+      </ion-grid>
+    </ion-slide>
+  </ion-slides>
+</ion-content>

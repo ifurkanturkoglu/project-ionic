@@ -1,0 +1,21 @@
+ion-content {
+    height: 100%;
+    width: 100%;
+}
+
+ion-sliders {
+    height: 100%;
+}
+
+ion-card, ion-sliders {
+    height: 80%;
+    width: 100%;
+}
+
+ion-button {
+    --background: none;
+    --border-width: 2px;
+    --border-style: solid;
+    --border-color: white;
+    margin-bottom: 10%;
+}

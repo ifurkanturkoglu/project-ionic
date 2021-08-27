@@ -21,6 +21,10 @@ const routes: Routes = [
   },  {
     path: 'groups',
     loadChildren: () => import('./modules/pages/groups/groups.module').then( m => m.GroupsPageModule)
+  },
+  {
+    path: 'lessons',
+    loadChildren: () => import('./modules/pages/lessons/lessons.module').then( m => m.LessonsPageModule)
   }
 
 ];
