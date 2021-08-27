@@ -1,12 +1,40 @@
 <ion-content>
- <ion-tabs>
-  <ion-tab-bar slot="top">
-   <ion-tab-button tab="user">
-    <ion-text>Kişiler</ion-text>
-   </ion-tab-button>
-   <ion-tab-button tab="user">
-    <ion-text>Gruplar</ion-text>
-   </ion-tab-button>
- </ion-tab-bar>
-</ion-tabs>
+  <ion-segment value="paid" (ionChange)="groupsChange()">
+    <ion-segment-button value="paid">
+      <i class="fas fa-user"></i>
+      <ion-label>Kisiler</ion-label>
+    </ion-segment-button>
+
+    <ion-segment-button value="free">
+      <i class="fas fa-users"></i>
+      <ion-label>Gruplar</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <ion-list  *ngFor='let a of kisi'>
+    <ion-item>
+      {{a}}
+    </ion-item>
+  </ion-list>
+
+
+
+
+
+
+
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="start">
+        <ion-fab-button color="secondary">
+          <i class="fas fa-user-plus"></i>
+        </ion-fab-button>
+        <ion-fab-button color="danger">
+          <i class="fas fa-user-minus"></i>
+        </ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
 </ion-content>
