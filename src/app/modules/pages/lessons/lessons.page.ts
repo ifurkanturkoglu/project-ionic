@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { IonSlides } from '@ionic/angular';
 
 @Component({
   selector: 'app-lessons',
@@ -7,11 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LessonsPage implements OnInit {
 
-  array:any[] = [1,2,3,4,5];
+  array: any[] = [1, 2, 3, 4, 5];
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  @ViewChild('slides') slide: IonSlides;
+
+  next() {
+    this.slide.slideNext();
   }
 
   slideOpts = {

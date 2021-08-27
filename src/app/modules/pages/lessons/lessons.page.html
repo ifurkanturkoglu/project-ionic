@@ -1,29 +1,22 @@
 <ion-content>
 
-  <ion-slides pager="true" [options]="slideOpts">
+  <ion-slides pager="true" [options]="slideOpts" #slides>
     <ion-slide *ngFor="let i of array">
-      <ion-grid>
-        <ion-row>
-          <ion-card>
-            <ion-card-header>
-              <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-              <ion-card-title>Card Title {{i}}</ion-card-title>
-            </ion-card-header>
-
-            <ion-card-content>
-              Keep close to Nature's heart... and break clear away, once in awhile,
-              and climb a mountain or spend a week in the woods. Wash your spirit clean.
-            </ion-card-content>
-          </ion-card>
-        </ion-row>
-        <ion-row>
-          <ion-button shape="round">A</ion-button>
-          <ion-button shape="round">B</ion-button>
-          <ion-button shape="round">C</ion-button>
-          <ion-button shape="round">D</ion-button>
-          <ion-button shape="round">E</ion-button>
-        </ion-row>
-      </ion-grid>
+      <ion-card>
+        <ion-card-content>
+          <img
+            src="https://firebasestorage.googleapis.com/v0/b/testmanager-fb88a.appspot.com/o/5.S%C4%B1n%C4%B1f%2FT%C3%BCrk%C3%A7e%2FC%C3%BCmlede%20Anlam%2FTest%201%2FSoru%203.png?alt=media&token=aed1c4a4-52c5-48bb-9d08-78e2cb6d2d9e">
+        </ion-card-content>
+        <ion-card-header>
+          <ion-card-title>Soru {{i}}</ion-card-title>
+        </ion-card-header>
+        <hr>
+        <ion-button (click)="next()">A</ion-button>
+        <ion-button>B</ion-button>
+        <ion-button>C</ion-button>
+        <ion-button>D</ion-button>
+        <ion-button>E</ion-button>
+      </ion-card>
     </ion-slide>
   </ion-slides>
 </ion-content>

@@ -7,15 +7,33 @@ ion-sliders {
     height: 100%;
 }
 
-ion-card, ion-sliders {
+ion-card, ion-slider {
     height: 80%;
     width: 100%;
 }
 
 ion-button {
+    width: 50px;
+    height: 50px;
     --background: none;
     --border-width: 2px;
     --border-style: solid;
     --border-color: white;
-    margin-bottom: 10%;
+    --border-radius:50%;
+    --ripple-color: darkgrey;
+    margin-bottom: 5%;
+    margin-left: 3%;
+}
+
+ion-card-content, ion-card-header {
+    padding: 0;
+}
+
+hr {
+    background-color: aliceblue;
+}
+
+.buttons {
+    display: block;
+    align-items: center;
 }
