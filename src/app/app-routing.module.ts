@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
-const routes: Routes = [ 
+const routes: Routes = [
   {
     path: '',
     redirectTo: 'mainpage',
     pathMatch: 'full'
-  },   
+  },
   {
     path: 'mainpage',
     loadChildren: () => import('./modules/pages/mainpage/mainpage.module').then( m => m.MainpagePageModule)
@@ -18,7 +18,11 @@ const routes: Routes = [
   {
     path: 'statspage',
     loadChildren: () => import('./modules/pages/statspage/statspage.module').then( m => m.StatspagePageModule)
+  },  {
+    path: 'groups',
+    loadChildren: () => import('./modules/pages/groups/groups.module').then( m => m.GroupsPageModule)
   }
+
 ];
 
 @NgModule({

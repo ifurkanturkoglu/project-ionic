@@ -12,7 +12,7 @@ export class AppComponent {
 
   constructor(private menu: MenuController,private router: Router) { }
 
-  openCustom() {
+  openCustom(){
     this.menu.enable(true, 'menuBar');
     this.menu.open('menuBar');
   }
