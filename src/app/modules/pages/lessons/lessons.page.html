@@ -1,21 +1,28 @@
 <ion-content>
 
   <ion-slides pager="true" [options]="slideOpts" #slides>
-    <ion-slide *ngFor="let i of array">
-      <ion-card>
+    <ion-slide *ngFor="let item of array; index as i" >
+      <ion-card *ngIf="side" [attr.id]="'slide'+i">
         <ion-card-content>
-          <img
-            src="https://firebasestorage.googleapis.com/v0/b/testmanager-fb88a.appspot.com/o/5.S%C4%B1n%C4%B1f%2FT%C3%BCrk%C3%A7e%2FC%C3%BCmlede%20Anlam%2FTest%201%2FSoru%203.png?alt=media&token=aed1c4a4-52c5-48bb-9d08-78e2cb6d2d9e">
+          <img src={{item}}>
         </ion-card-content>
         <ion-card-header>
-          <ion-card-title>Soru {{i}}</ion-card-title>
+          <ion-card-title>Soru {{i+1}}</ion-card-title>
         </ion-card-header>
         <hr>
         <ion-button (click)="next()">A</ion-button>
-        <ion-button>B</ion-button>
+        <ion-button (click)="info(i)">B</ion-button>
         <ion-button>C</ion-button>
-        <ion-button>D</ion-button>
-        <ion-button>E</ion-button>
+        <ion-button>D</ion-button>       
+      </ion-card>
+
+      <ion-card *ngIf="!side" [attr.id]="'slide'+i">     
+        <ion-card-header>
+          <ion-card-title>Soru {{i+1}} için İpuçları</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          Bilgiler
+        </ion-card-content>             
       </ion-card>
     </ion-slide>
   </ion-slides>
