@@ -1,6 +1,7 @@
 ion-slides{
     background-color: gray;
-    height: 36.5%;
+    height: calc(100% - 390px);
+    min-height: 150px;
     position: relative;
 }
 ion-button{
@@ -10,6 +11,7 @@ ion-button{
     margin-top: 0px;
     margin-bottom: 0px;
     --border-radius:1px;
+    margin-left:0px;
 
 }
 ion-button:hover{
@@ -31,6 +33,7 @@ ion-grid{
     padding: 0;
 }
 ion-col{
-    --ion-grid-column-padding:0;
-    height: 130px;
+    --ion-grid-column-padding:0;    
+    min-height: 130px;
 }
+

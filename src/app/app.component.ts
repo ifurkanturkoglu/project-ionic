@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  currentUrl: string;
+  
 
   constructor(private menu: MenuController,private router: Router) { }
 
@@ -19,11 +19,7 @@ export class AppComponent {
   closeCustom(){
     this.menu.enable(false, 'menuBar');
     this.menu.close('menuBar');
-  }
-  async url(){
-     this.currentUrl= this.router.url.toString();
-     await console.log(this.currentUrl);
-  }
+  }  
 }
 
 

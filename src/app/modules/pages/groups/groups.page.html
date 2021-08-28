@@ -12,9 +12,14 @@
   </ion-segment>
 
   <ion-list  *ngFor='let a of kisi'>
-    <ion-item>
-      {{a}}
-    </ion-item>
+    
+      <ion-button expand="full"  style="padding: 0; margin: 0; height: 60px;" >
+        <ion-avatar style="left: 0; position: absolute; width: 53px; height: 53px;">
+          <img src="https://firebasestorage.googleapis.com/v0/b/testmanager-fb88a.appspot.com/o/users%2FyFrzbhpgauch7ixXPvFucmrKCzQ2%2FprofilePicture%2FprofileImg?alt=media&token=65b7ca3b-5768-4748-ae23-18c48739cb33">
+        </ion-avatar>
+        <ion-label style="left: 79px; position: absolute; max-width: 58px; overflow: auto;">{{a}}</ion-label>
+      </ion-button>     
+    
   </ion-list>
 
 
