@@ -1,57 +1,95 @@
 ion-content {
-    height: 100%;
-    width: 100%;
+  height: 100%;
+  width: 100%;
 }
 
-ion-sliders {
-    height: 100%;
+ion-slides {
+  height: 100%;
+}
+
+ion-slide {
+  perspective: 600px;
 }
 
 ion-card, ion-slide {
-    height: 80%;
-    width: 100%;  
+  height: 95%;
+  width: 100%;
+}
+
+ion-card-content {
+  height: calc(100% - 150px);
+  background-color: whitesmoke;
 }
 
 .anim {
-    animation: myanim 1s linear;
+  animation: myanim 1s;
 }
 
 @keyframes myanim {
-    0% {        
-        transform: rotateY(0deg);          
-    }
-    
-    50% {
-        transform: rotateY(90deg);      
-    }
-    
-    100% {        
-        transform: rotateY(180deg);       
-    }
+  from {
+    transform: rotateY(180deg);
+  }
+
+  to {
+    transform: rotateY(0deg);
+  }
+}
+
+.anim2 {
+  animation: myanim2 1s;
+}
+
+@keyframes myanim2 {
+  from {
+    transform: rotateY(180deg);
+  }
+
+  to {
+    transform: rotateY(0deg);
+  }
 }
 
 ion-button {
-    width: 50px;
-    height: 50px;
-    --background: none;
-    --border-width: 2px;
-    --border-style: solid;
-    --border-color: white;
-    --border-radius:50%;
-    --ripple-color: darkgrey;
-    margin-bottom: 5%;
-    margin-left: 3%;
+  width: 50px;
+  height: 50px;
+  --background: none;
+  --border-width: 2px;
+  --border-style: solid;
+  --border-color: white;
+  --border-radius: 50%;
+  --ripple-color: darkgrey;
+  margin-bottom: 5%;
+  margin-left: 3%;
 }
 
 ion-card-content, ion-card-header {
-    padding: 0;
+  padding: 0;
 }
 
 hr {
-    background-color: aliceblue;
+  background-color: aliceblue;
 }
 
 .buttons {
-    display: block;
-    align-items: center;
+  display: block;
+  align-items: center;
+}
+
+.infobtn {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: auto;
+  color: aliceblue;
+  padding: 0;
+  margin: 0 10px 0 0;
+  --border-width: 0px;
+  --ripple-color: none;
+}
+
+ion-icon {
+  position: fixed;
+  height: 100%;
+  width: 100%;
 }

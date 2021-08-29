@@ -1,29 +1,35 @@
 <ion-content>
-
   <ion-slides pager="true" [options]="slideOpts" #slides>
-    <ion-slide *ngFor="let item of array; index as i" >
-      <ion-card *ngIf="side" [attr.id]="'slide'+i">
+    <ion-slide *ngFor="let item of array; index as i">
+
+      <ion-card *ngIf="side" [ngClass]="{'anim' : side}" [attr.id]="'slide'+i">
         <ion-card-content>
           <img src={{item}}>
         </ion-card-content>
+        <hr>
         <ion-card-header>
           <ion-card-title>Soru {{i+1}}</ion-card-title>
+          <ion-button class="infobtn" (click)="info(i)"><ion-icon name="information-circle-outline"></ion-icon></ion-button>
         </ion-card-header>
         <hr>
         <ion-button (click)="next()">A</ion-button>
-        <ion-button (click)="info(i)">B</ion-button>
+        <ion-button>B</ion-button>
         <ion-button>C</ion-button>
-        <ion-button>D</ion-button>       
+        <ion-button>D</ion-button>
       </ion-card>
 
-      <ion-card *ngIf="!side" [attr.id]="'slide'+i">     
+      <ion-card *ngIf="!side" [ngClass]="{'anim2' : !side}" [attr.id]="'slide'+i">
+        <hr>
         <ion-card-header>
           <ion-card-title>Soru {{i+1}} için İpuçları</ion-card-title>
+          <ion-button class="infobtn" (click)="info(i)"><ion-icon name="arrow-undo"></ion-icon></ion-button>
         </ion-card-header>
+        <hr>
         <ion-card-content>
           Bilgiler
-        </ion-card-content>             
+        </ion-card-content>
       </ion-card>
+
     </ion-slide>
   </ion-slides>
 </ion-content>

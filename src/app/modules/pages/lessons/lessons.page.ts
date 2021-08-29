@@ -28,8 +28,8 @@ export class LessonsPage implements OnInit {
     this.slide.slideNext();
   }
 
-  info(idx: number) {    
-    document.getElementById("slide" + idx).className = "ios hydrated anim";    
+  info(idx: number) {
+    this.side = !this.side;
   }
 
   slideOpts = {
