@@ -1,3 +1,7 @@
+<ion-header>
+  <ion-button class="menubtn"><ion-icon name="menu-outline"></ion-icon></ion-button>
+  <ion-title>Türkçe 5. Sınıf Test-1</ion-title>
+</ion-header>
 <ion-content>
   <ion-slides pager="true" [options]="slideOpts" #slides>
     <ion-slide *ngFor="let item of array; index as i">
@@ -8,6 +12,7 @@
         </ion-card-content>
         <hr>
         <ion-card-header>
+          <ion-button class="editbtn"><i class="far fa-edit"></i></ion-button>
           <ion-card-title>Soru {{i+1}}</ion-card-title>
           <ion-button class="infobtn" (click)="info(i)"><ion-icon name="information-circle-outline"></ion-icon></ion-button>
         </ion-card-header>
