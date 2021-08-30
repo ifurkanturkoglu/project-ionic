@@ -1,14 +1,12 @@
 <ion-app>
-
-  <ion-menu side="start"   menuId="menuBar" contentId="main" class="menuBar">
+  
+  <ion-menu side="start"  type="push" menuId="menuBar" contentId="main"  class="menuBar" >
     <ion-header>
       <ion-avatar>
         <img src="https://firebasestorage.googleapis.com/v0/b/testmanager-fb88a.appspot.com/o/users%2FyFrzbhpgauch7ixXPvFucmrKCzQ2%2FprofilePicture%2FprofileImg?alt=media&token=65b7ca3b-5768-4748-ae23-18c48739cb33">
-      </ion-avatar>
-      
+      </ion-avatar>      
 
-      <ion-toolbar style="background: none; height: 50px; background-color: #454343; color: white;" >
-               
+      <ion-toolbar style="background: none; height: 50px; background-color: #454343; color: white;" >               
         <ion-title>KullaniciAdi</ion-title>
       </ion-toolbar>
     </ion-header>
@@ -57,15 +55,21 @@
     </ion-content>
   </ion-menu>
 
-  <ion-header>
-    <ion-button (click)="openCustom()" fill=clear  class="menuBtn" style="float:left; font-size: 29px;  padding-top: 7px; max-width: 4px; color: aliceblue;">
-      <i class="fas fa-bars"></i>
-    </ion-button>
-    <p style="height: auto; width: fit-content; position: relative; display: inline-block;">TestManager</p>
-  </ion-header>
-  <ion-content>
-    <ion-router-outlet id="main"></ion-router-outlet>
-  </ion-content>
+
+
+ <ion-content>
+  <ion-router-outlet id="main">
+    <ion-header style="margin-bottom: 50px;">
+      <ion-button (click)="openCustom()" fill=clear  class="menuBtn" style="float:left; font-size: 29px;  padding-top: 7px; max-width: 4px; color: aliceblue;">
+        <i class="fas fa-bars"></i>
+      </ion-button>
+      <p style="height: auto; width: fit-content; position: relative; display: inline-block;">TestManager</p>
+    </ion-header>
+  </ion-router-outlet>
+ </ion-content>
+   
+    
+ 
 </ion-app>
 
 
