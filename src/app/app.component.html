@@ -10,7 +10,6 @@
         <ion-title>KullaniciAdi</ion-title>
       </ion-toolbar>
     </ion-header>
-    
     <ion-content>
       <ion-list style="background: tertiary;">
         <ion-button expand="block" [routerLink]="['']" (click)="closeCustom()" >
@@ -59,14 +58,7 @@
 
 
  <ion-content>
-  <ion-router-outlet id="main">
-    <ion-header style="margin-bottom: 50px;">
-      <ion-button (click)="openCustom()" fill=clear  class="menuBtn" style="float:left; font-size: 29px;  padding-top: 7px; max-width: 4px; color: aliceblue;">
-        <i class="fas fa-bars"></i>
-      </ion-button>
-      <p style="height: auto; width: fit-content; position: relative; display: inline-block;">TestManager</p>
-    </ion-header>
-  </ion-router-outlet>
+  <ion-router-outlet id="main"></ion-router-outlet>
  </ion-content>
    
     
