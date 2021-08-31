@@ -1,19 +1,10 @@
-ion-title {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 50px;
-}
-
-.menubtn {
-  --border-width: 0px;
-  height: 40px;
-}
-
 ion-content {
   height: 100%;
   width: 100%;
+  max-height: 100vh;
+  max-width: 100%;
+  min-height: 500px;
+  min-width: 320px;
 }
 
 ion-slides {
@@ -25,14 +16,15 @@ ion-slide {
 }
 
 ion-card, ion-slide {
-  height: auto;
-  //height: 95%;
-  width: 100%;  
+  //height: auto;
+  height: calc(95% - 50px);
+  max-width: 100%;
+  width: 80%;  
 }
 
 ion-card-content {  
-  height: auto;
-  //height: calc(100% - 150px);
+  //height: auto;
+  height: calc(100% - 150px);
   background-color: whitesmoke;
   transition: height 5s;
 }
