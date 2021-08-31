@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { IonSlides } from '@ionic/angular';
+import { Component, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-mainpage',
@@ -9,13 +10,21 @@ export class MainpagePage implements OnInit {
 
 
   constructor() { }
-
+  
   ngOnInit() {
+    
+
   }
+  
+  sliderAuto(slides){
+    slides.startAutoplay();
+  }
+  
+  
 
   // eslint-disable-next-line @typescript-eslint/member-ordering
   slideOpts = {
-    initialSlide: 1,
-    speed: 400
+    initialSlide: 0,
+    speed: 400,    
   };
 }

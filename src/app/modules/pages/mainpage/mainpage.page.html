@@ -5,7 +5,7 @@
     </ion-menu-button>
     <p style="height: auto; width: fit-content; position: relative; display: inline-block; left: calc(50% - 50px);">TestManager</p>
   </ion-header>
-  <ion-slides pager="true" [options]="slideOpts">
+  <ion-slides pager="true" [options]="slideOpts" #slides (ionSlidesDidLoad)="sliderAuto(slides)">
     <ion-slide>
       <h1>Slide 1</h1>
     </ion-slide>

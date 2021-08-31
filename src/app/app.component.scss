@@ -1,8 +1,4 @@
-ion-header{
-  background-color: rgb(39, 85, 236);
-  text-align: center;
-  z-index: 999;
-}
+
 .menuBar{
   --width: 80%;
   z-index: 99;
@@ -12,9 +8,7 @@ ion-button{
   --background:rgb(36,36,36);
   height: 50px;
 }
-.menuBtn{
-  --background:rgb(39, 85, 236);
-}
+
 ion-list{
   min-height: 100%;
   padding-top: 11vh;
@@ -44,9 +38,7 @@ ion-title{
   left: calc(50% - 65px);
   top: 26px;
 }
-ion-header::after{
-  height: 0;
-}
+
 ion-avatar{
   position: fixed;
   width: 60px; 
