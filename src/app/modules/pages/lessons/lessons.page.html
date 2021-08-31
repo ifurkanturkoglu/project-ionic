@@ -1,20 +1,24 @@
 <ion-header>
-  <ion-button class="menubtn"><ion-icon name="menu-outline"></ion-icon></ion-button>
+  <ion-button class="menubtn">
+    <ion-icon name="menu-outline"></ion-icon>
+  </ion-button>
   <ion-title>Türkçe 5. Sınıf Test-1</ion-title>
 </ion-header>
 <ion-content>
-  <ion-slides pager="true" [options]="slideOpts" #slides>
+  <ion-slides scrollbar="true" [options]="slideOpts" #slides>
     <ion-slide *ngFor="let item of array; index as i">
 
       <ion-card *ngIf="side" [ngClass]="{'anim' : side}" [attr.id]="'slide'+i">
-        <ion-card-content>
+        <ion-card-content [attr.id]="'card'+i">
           <img src={{item}}>
         </ion-card-content>
         <hr>
         <ion-card-header>
-          <ion-button class="editbtn"><i class="far fa-edit"></i></ion-button>
+          <ion-button class="editbtn" (click)="drawScreen(i)"><ion-icon name="create-outline"></ion-icon></ion-button>
           <ion-card-title>Soru {{i+1}}</ion-card-title>
-          <ion-button class="infobtn" (click)="info(i)"><ion-icon name="information-circle-outline"></ion-icon></ion-button>
+          <ion-button class="infobtn" (click)="info(i)">
+            <ion-icon name="information-circle-outline"></ion-icon>
+          </ion-button>
         </ion-card-header>
         <hr>
         <ion-button (click)="next()">A</ion-button>
@@ -27,7 +31,9 @@
         <hr>
         <ion-card-header>
           <ion-card-title>Soru {{i+1}} için İpuçları</ion-card-title>
-          <ion-button class="infobtn" (click)="info(i)"><ion-icon name="arrow-undo"></ion-icon></ion-button>
+          <ion-button class="infobtn" (click)="info(i)">
+            <ion-icon name="arrow-undo"></ion-icon>
+          </ion-button>
         </ion-card-header>
         <hr>
         <ion-card-content>

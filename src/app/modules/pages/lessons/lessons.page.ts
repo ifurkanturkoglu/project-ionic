@@ -19,7 +19,7 @@ export class LessonsPage implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit() {    
   }
 
   @ViewChild('slides') slide: IonSlides;
@@ -30,6 +30,10 @@ export class LessonsPage implements OnInit {
 
   info(idx: number) {
     this.side = !this.side;
+  }
+
+  drawScreen(idx: number) {
+    document.getElementById('card' + idx).className = "ios card-content-ios hydrated opendraw";
   }
 
   slideOpts = {
