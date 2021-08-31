@@ -10,14 +10,16 @@ ion-header{
 ion-button{
   margin-bottom: -15px;
   --background:rgb(36,36,36);
+  height: 50px;
 }
 .menuBtn{
   --background:rgb(39, 85, 236);
 }
 ion-list{
-  height: 100%;
-  padding-top: 14vh;
-  background-color:#454343;
+  min-height: 100%;
+  padding-top: 11vh;
+  background-color: #454343;
+  position: relative;
 }
 i{
   left: 10px;
@@ -47,9 +49,22 @@ ion-header::after{
 }
 ion-avatar{
   position: fixed;
-  z-index: 99;
   width: 60px; 
   height: 60px; 
   top: 7px;
   left: 7px;
+}
+ion-label{
+  width: 100%;
+  
+  min-height: 70px;
+  position: relative;
+  background-color: #454343;
+  display: inline-block;
+}
+@media(min-height:800px)
+{
+  ion-button{
+    height: 70px;
+  }
 }

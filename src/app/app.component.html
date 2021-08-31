@@ -1,15 +1,17 @@
 <ion-app>
-  
-  <ion-menu side="start"  type="push" menuId="menuBar" contentId="main"  class="menuBar" >
-    <ion-header>
+  <ion-split-pane when="md" contentId="main">
+  <ion-menu side="start" type="push" menuId="menuBar" contentId="main"  class="menuBar" >
+    <ion-label>
       <ion-avatar>
         <img src="https://firebasestorage.googleapis.com/v0/b/testmanager-fb88a.appspot.com/o/users%2FyFrzbhpgauch7ixXPvFucmrKCzQ2%2FprofilePicture%2FprofileImg?alt=media&token=65b7ca3b-5768-4748-ae23-18c48739cb33">
-      </ion-avatar>      
+      </ion-avatar>     
 
-      <ion-toolbar style="background: none; height: 50px; background-color: #454343; color: white;" >               
+                 
         <ion-title>KullaniciAdi</ion-title>
-      </ion-toolbar>
-    </ion-header>
+      
+    </ion-label>
+    
+    
     <ion-content>
       <ion-list style="background: tertiary;">
         <ion-button expand="block" [routerLink]="['']" (click)="closeCustom()" >
@@ -17,32 +19,32 @@
           <span>Anasayfa</span>
         </ion-button>
         <br>
-        <ion-button expand="block">
+        <ion-button expand="block" [routerLink]="['/profilepage']" (click)="closeCustom()" >
           <i class="fas fa-address-book"></i>
           <span>Profil</span>
         </ion-button>
         <br>
-        <ion-button expand="block">
+        <ion-button expand="block" [routerLink]="['/lessons']" (click)="closeCustom()">
           <i class="fas fa-book"></i>
           <span>Dersler</span>
         </ion-button>
         <br>
-        <ion-button expand="block">
+        <ion-button expand="block" [routerLink]="['/statspage']" (click)="closeCustom()">
           <i class="fas fa-chart-line"></i>
           <span>İstatistikler</span>
         </ion-button>
         <br>
-        <ion-button expand="block">
+        <ion-button expand="block" (click)="closeCustom()">
           <i class="fas fa-calendar-alt"></i>
           <span>Ajandam</span>
         </ion-button>
         <br>
-        <ion-button expand="block">
+        <ion-button expand="block" [routerLink]="['/groups']" (click)="closeCustom()">
           <i class="fas fa-users"></i>
           <span>Gruplar</span>
         </ion-button>
         <br>
-        <ion-button expand="block">
+        <ion-button expand="block" [routerLink]="['/options']" (click)="closeCustom()">
           <i class="fas fa-cog"></i>
           <span>Ayarlar</span>
         </ion-button>
@@ -57,10 +59,10 @@
 
 
 
- <ion-content>
+ 
   <ion-router-outlet id="main"></ion-router-outlet>
- </ion-content>
-   
+ 
+</ion-split-pane>
     
  
 </ion-app>

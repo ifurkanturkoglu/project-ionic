@@ -17,7 +17,7 @@ export class AppComponent {
     this.menu.open('menuBar');
   }
   closeCustom(){
-    this.menu.enable(false, 'menuBar');
+    
     this.menu.close('menuBar');
   }  
 }
