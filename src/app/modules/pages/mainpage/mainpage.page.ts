@@ -24,6 +24,7 @@ export class MainpagePage implements OnInit {
 
   // eslint-disable-next-line @typescript-eslint/member-ordering
   slideOpts = {
+    slidesPerView: 1,
     initialSlide: 0,
     speed: 400,    
   };
