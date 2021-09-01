@@ -9,7 +9,7 @@
   <ion-label style="margin: 0;">Profil</ion-label>
 </ion-header>
 
-<ion-content class="ion-padding">  
+<ion-content class="ion-padding">
   <ion-avatar>
     <img src="https://analyticsindiamag.com/wp-content/uploads/2020/10/7d744a684fe03ebc7e8de545f97739dd.jpg">
   </ion-avatar>
@@ -27,7 +27,16 @@
   <ion-label><b>Ad Soyad</b></ion-label>
   <ion-label>12. Sınıf</ion-label>
 
-  <ion-button color="test" href="/statspage"><i class="fas fa-chart-line"></i>İstatistiklerim</ion-button>
-  <ion-button color="test"><ion-icon name="bookmarks-outline"></ion-icon>Kaydettiklerim</ion-button>
-  <ion-button color="test" (click)="logout()"><i class="fas fa-sign-out-alt"></i>Çıkış Yap</ion-button>
+  <ion-button color="test" href="/statspage">
+    <ion-icon slot="start" name="bar-chart-outline"></ion-icon>
+    <ion-label>İstatistiklerim</ion-label>
+  </ion-button>
+  <ion-button color="test">
+    <ion-icon slot="start" name="bookmarks-outline"></ion-icon>
+    <ion-label>Kaydettiklerim</ion-label>
+  </ion-button>
+  <ion-button color="test" (click)="logout()">
+    <ion-icon slot="start" name="exit-outline"></ion-icon>
+    <ion-label>Çıkış Yap</ion-label>
+  </ion-button>
 </ion-content>

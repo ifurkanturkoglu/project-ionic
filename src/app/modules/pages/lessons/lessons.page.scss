@@ -20,10 +20,15 @@ ion-slide {
 }
 
 ion-card, ion-slide {
-  //height: auto;
-  height: calc(95% - 50px);
+  height: auto;
+  //height: calc(100% - 50px);
   max-width: 100%;
-  width: 80%;  
+  width: 80%; 
+}
+
+ion-card {
+  background-color: black;
+  color: white;
 }
 
 ion-card-content {  

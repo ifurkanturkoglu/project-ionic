@@ -38,7 +38,7 @@ export class LessonsPage implements OnInit {
 
   slideOpts = {
     initialSlide: 0,
-    speed: 400
+    speed: 400,    
   };
 
 }
