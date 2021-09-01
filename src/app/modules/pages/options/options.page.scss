@@ -9,8 +9,11 @@ ion-select{
 
 ion-item {
     --padding-start: 0;
+    ion-icon{
+        margin: 3;
+    }
 }
 ion-header{
     background: rgb(152 186 225);
     color: white;
-  }
+}
