@@ -2,11 +2,7 @@ ion-header{
   background: rgb(152 186 225);
   color: white;
 }
-ion-segment-button{
-  --background:rgb(235, 131, 131);
-  --background-checked:rgb(59, 182, 182);
-   max-width: 100%;
-}
+
 ion-label{
   color:white;
 }
@@ -21,4 +17,8 @@ ion-item{
 
 ion-list{
   padding: 0;
+}
+ion-segment-button{
+  --color-checked:white;
+  
 }

@@ -16,30 +16,40 @@
   
 
 
-  <ion-segment value="paid" (ionChange)="groupsChange()">
-    <ion-segment-button value="paid">
-      <i class="fas fa-user"></i>
+  <ion-segment (ionChange)="groupsChange()" value="Kisiler">
+    <ion-segment-button value="Kisiler">
+      <ion-icon name="person-sharp"></ion-icon>
       <ion-label>Kisiler</ion-label>
     </ion-segment-button>
-
-    <ion-segment-button value="free">
-      <i class="fas fa-users"></i>
+    <ion-segment-button value="Gruplar">
+      <ion-icon name="people-sharp"></ion-icon>
       <ion-label>Gruplar</ion-label>
     </ion-segment-button>
   </ion-segment>
 
-  <ion-list *ngFor='let a of kisi'>
+  <ion-list *ngIf="controller">
 
-    <ion-button expand="full" style="padding: 0; margin: 0; height: 60px;">
+    <ion-button *ngFor='let a of person' expand="full" style="padding: 0; margin: 0; height: 60px; --background: darkorchid; border: 4px #ffffff solid; border-radius: 11px;">
       <ion-avatar style="left: 0; position: absolute; width: 53px; height: 53px;">
         <img
           src="https://firebasestorage.googleapis.com/v0/b/testmanager-fb88a.appspot.com/o/users%2FyFrzbhpgauch7ixXPvFucmrKCzQ2%2FprofilePicture%2FprofileImg?alt=media&token=65b7ca3b-5768-4748-ae23-18c48739cb33">
       </ion-avatar>
-      <ion-label style="left: 79px; position: absolute; max-width: 58px; overflow: auto;">{{a}}</ion-label>
+      <ion-label style="left: 79px; position: absolute; max-width: 58px; overflow: auto; color: white;">{{a}}</ion-label>
     </ion-button>
 
   </ion-list>
 
+  <ion-list *ngIf="!controller">
+
+    <ion-button *ngFor='let a of groups' expand="full" style="padding: 0; margin: 0; height: 60px; --background: darkorchid; border: 4px #ffffff solid; border-radius: 11px;">
+      <ion-avatar style="left: 0; position: absolute; width: 53px; height: 53px;">
+        <img
+          src="https://firebasestorage.googleapis.com/v0/b/testmanager-fb88a.appspot.com/o/users%2FyFrzbhpgauch7ixXPvFucmrKCzQ2%2FprofilePicture%2FprofileImg?alt=media&token=65b7ca3b-5768-4748-ae23-18c48739cb33">
+      </ion-avatar>
+      <ion-label style="left: 79px; position: absolute; max-width: 58px; overflow: auto; color: white;">{{a}}</ion-label>
+    </ion-button>
+
+  </ion-list>
 
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
     <ion-fab-button>

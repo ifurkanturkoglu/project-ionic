@@ -6,13 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./groups.page.scss'],
 })
 export class GroupsPage implements OnInit {
-  kisi: any[]=['a','b','c'];
-  controller=false;
+  person: any[]=['a','b','c'];
+  groups: any[]=['d1','e','f']
+  controller=true;
   constructor() { }
 
   ngOnInit() {
   }
   groupsChange(){
     this.controller =!this.controller;
+    console.log(this.controller)
   }
 }
