@@ -3,6 +3,13 @@
 
 /** Ionic CSS Variables **/
 :root {
+  /** fab-btn **/
+  --ion-color-fab-btn: #b34fcf;
+  --ion-color-fab-btn-rgb: 179,79,207;
+  --ion-color-fab-btn-contrast: #ffffff;
+  --ion-color-fab-btn-contrast-rgb: 255,255,255;
+  --ion-color-fab-btn-shade: #9e46b6;
+  --ion-color-fab-btn-tint: #bb61d4;
 
   /** test **/
   --ion-color-test: #2C3E50;
@@ -92,6 +99,14 @@
   --ion-color-contrast-rgb: var(--ion-color-test-contrast-rgb);
   --ion-color-shade: var(--ion-color-test-shade);
   --ion-color-tint: var(--ion-color-test-tint);
+}
+.ion-color-fab-btn {
+  --ion-color-base: var(--ion-color-fab-btn);
+  --ion-color-base-rgb: var(--ion-color-fab-btn-rgb);
+  --ion-color-contrast: var(--ion-color-fab-btn-contrast);
+  --ion-color-contrast-rgb: var(--ion-color-fab-btn-contrast-rgb);
+  --ion-color-shade: var(--ion-color-fab-btn-shade);
+  --ion-color-tint: var(--ion-color-fab-btn-tint);
 }
 
 @media (prefers-color-scheme: dark) {
