@@ -22,4 +22,6 @@ ion-header{
 ion-buttons{
     padding: 0;
     width: 100%;
+    slot : start;
+    margin-right: -32px;
 }
