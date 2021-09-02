@@ -5,6 +5,8 @@ ion-header{
 
 ion-label{
   color:white;
+  font-family: none;
+  
 }
 i{
   position: fixed;
@@ -19,6 +21,16 @@ ion-list{
   padding: 0;
 }
 ion-segment-button{
-  --color-checked:white;
+  --color-checked: rgb(0 0 0 / 22%);
+  --color: rgb(0 0 0 / 11%);
   
+}
+ion-button{
+  padding: 0;
+  margin: 0; 
+  height: 60px;  
+  border-bottom: 4px #ffffff solid; 
+  border-radius: 11px;
+  --background: rgb(238,174,202);
+  --background: linear-gradient(-30deg, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
 }

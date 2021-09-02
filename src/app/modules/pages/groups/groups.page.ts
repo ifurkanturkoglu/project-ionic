@@ -6,8 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./groups.page.scss'],
 })
 export class GroupsPage implements OnInit {
-  person: any[]=['a','b','c'];
-  groups: any[]=['d1','e','f']
+  person: any[]=['Furkan','Mehmet','Betül','Hasan'];
+  groups: any[]=['DDL','FFSQUAD','Staj']
   controller=true;
   constructor() { }
 
