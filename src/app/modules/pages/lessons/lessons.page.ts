@@ -34,6 +34,7 @@ export class LessonsPage implements OnInit {
 
   drawScreen(idx: number) {
     document.getElementById('card' + idx).className = "md card-content-md hydrated opendraw";
+    document.getElementById('slide'+idx).className = "anim md hydrated opendraw";
   }
 
   slideOpts = {
