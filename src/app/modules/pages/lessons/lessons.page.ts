@@ -33,7 +33,7 @@ export class LessonsPage implements OnInit {
   }
 
   drawScreen(idx: number) {
-    document.getElementById('card' + idx).className = "ios card-content-ios hydrated opendraw";
+    document.getElementById('card' + idx).className = "md card-content-md hydrated opendraw";
   }
 
   slideOpts = {
