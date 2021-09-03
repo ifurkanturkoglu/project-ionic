@@ -4,17 +4,17 @@
     <ion-label>
       <ion-avatar>
         <img src="https://firebasestorage.googleapis.com/v0/b/testmanager-fb88a.appspot.com/o/users%2FyFrzbhpgauch7ixXPvFucmrKCzQ2%2FprofilePicture%2FprofileImg?alt=media&token=65b7ca3b-5768-4748-ae23-18c48739cb33">
-      </ion-avatar>     
+      </ion-avatar>
 
-                 
+
         <ion-title>KullaniciAdi</ion-title>
-      
+
     </ion-label>
-    
-    
+
+
     <ion-content>
       <ion-list style="background: tertiary;">
-        <ion-button expand="block" [routerLink]="['']" (click)="closeCustom()" >
+        <ion-button expand="block" [routerLink]="['']" (click)="closeCustom();network()" >
           <i class="fas fa-home"></i>
           <span>Anasayfa</span>
         </ion-button>
@@ -56,12 +56,12 @@
       </ion-list>
     </ion-content>
   </ion-menu>
- 
+
   <ion-router-outlet id="main"></ion-router-outlet>
- 
+
 </ion-split-pane>
-    
- 
+
+
 </ion-app>
 
 
