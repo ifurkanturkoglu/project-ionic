@@ -22,5 +22,6 @@ export class AppComponent {
   network(){
     const a = Network.getStatus();
     a.then(res => console.log(res));
+
   }
 }
