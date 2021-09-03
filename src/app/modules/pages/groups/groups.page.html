@@ -13,7 +13,7 @@
 
 
 <ion-content>
-  
+
 
 
   <ion-segment (ionChange)="groupsChange()" value="Kisiler">
@@ -27,9 +27,11 @@
     </ion-segment-button>
   </ion-segment>
 
+  <ion-searchbar placeholder="Kullanıcı Ara" [(ngModel)]="searchTerm" showClearButton="focus" animated></ion-searchbar>
+
   <ion-list *ngIf="controller">
 
-    <ion-button *ngFor='let a of person' expand="full" >
+    <ion-button *ngFor='let a of person | filter: searchTerm' expand="full" >
       <ion-avatar style="left: 0; position: absolute; width: 53px; height: 53px;">
         <img
           src="https://firebasestorage.googleapis.com/v0/b/testmanager-fb88a.appspot.com/o/users%2FyFrzbhpgauch7ixXPvFucmrKCzQ2%2FprofilePicture%2FprofileImg?alt=media&token=65b7ca3b-5768-4748-ae23-18c48739cb33">
@@ -41,7 +43,7 @@
 
   <ion-list *ngIf="!controller">
 
-    <ion-button *ngFor='let a of groups' expand="full"  >
+    <ion-button *ngFor='let a of groups | filter: searchTerm' expand="full"  >
       <ion-avatar style="left: 0; position: absolute; width: 53px; height: 53px;">
         <img
           src="https://firebasestorage.googleapis.com/v0/b/testmanager-fb88a.appspot.com/o/users%2FyFrzbhpgauch7ixXPvFucmrKCzQ2%2FprofilePicture%2FprofileImg?alt=media&token=65b7ca3b-5768-4748-ae23-18c48739cb33">
