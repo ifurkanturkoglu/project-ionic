@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActionSheetController, AlertController } from '@ionic/angular';
 import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
-import {Storage} from '@capacitor/storage'
+import { ActionSheetController, AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-profilepage',
@@ -15,11 +14,9 @@ export class ProfilepagePage implements OnInit {
     public actionSheetController: ActionSheetController) { }
 
   ngOnInit() {
-
   }
 
-
-  async setPhoto() {
+  async takePhoto() {
 
     const actionSheet = await this.actionSheetController.create({
       header: 'Profil Fotoğrafını Düzenle',
@@ -28,17 +25,8 @@ export class ProfilepagePage implements OnInit {
         text: 'Fotoğraf Çek',
         role: 'takePhoto',
         icon: 'camera',
-        handler: async () => {
-          const image = await Camera.getPhoto({
-            quality:100,            
-            allowEditing:true,
-            resultType:CameraResultType.Uri,
-            saveToGallery:true,
-            source: CameraSource.Camera
-
-          });
-          // let a = (await fetch(image.path)).blob()
-          // console.log(a)
+        handler: () => {
+          console.log('Delete clicked');
         }
       }, {
         text: 'Galeriden Seç',
@@ -52,6 +40,8 @@ export class ProfilepagePage implements OnInit {
             source: CameraSource.Photos
             
           });
+        handler: () => {
+          console.log('Share clicked');
         }
       },   {
         text: 'Kapat',
