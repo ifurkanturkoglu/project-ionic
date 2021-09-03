@@ -50,6 +50,7 @@ export class ProfilepagePage implements OnInit {
             allowEditing:true,
             resultType:CameraResultType.Uri,
             source: CameraSource.Photos
+            
           });
         }
       },   {
