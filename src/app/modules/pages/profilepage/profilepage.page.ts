@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
+import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
+import { Directory, Filesystem } from '@capacitor/filesystem';
+import { Storage } from '@capacitor/storage';
 import { ActionSheetController, AlertController } from '@ionic/angular';
 
 @Component({
@@ -8,6 +10,9 @@ import { ActionSheetController, AlertController } from '@ionic/angular';
   styleUrls: ['./profilepage.page.scss'],
 })
 export class ProfilepagePage implements OnInit {
+
+  public photos: Photos[] = [];
+  private Photo_Storage: string = "photos";
 
   constructor(
     public alertController: AlertController,
@@ -32,6 +37,10 @@ export class ProfilepagePage implements OnInit {
             resultType: CameraResultType.Uri,
             source: CameraSource.Camera
           });
+          const savedImageFile = await this.savePicture(image);
+          this.photos.unshift(savedImageFile);
+
+          Storage.set({ key: this.Photo_Storage, value: JSON.stringify(this.photos) });
         }
       }, {
         text: 'Galeriden Seç',
@@ -49,13 +58,51 @@ export class ProfilepagePage implements OnInit {
         text: 'Kapat',
         icon: 'close',
         role: 'cancel',
-        handler: () => {
-
-        }
       }]
     });
     await actionSheet.present();
   }
+  public async loadSaved() {
+
+    const photoList = await Storage.get({ key: this.Photo_Storage });
+    this.photos = JSON.parse(photoList.value) || [];
+
+    for (let photo of this.photos) {
+      const readFile = await Filesystem.readFile({
+        path: photo.filepath,
+        directory: Directory.Data
+      });
+      photo.webviewpath = `data:image/jpeg;base64,${readFile.data}`;
+    }
+  }
+
+  async savePicture(image: Photo) {
+    const base64Data = await this.readAsBase64(image);
+    const filename = "profilPicture.jpeg";
+    const savedfile = await Filesystem.writeFile({
+      path: filename,
+      data: base64Data,
+      directory: Directory.Data
+    })
+    return { filepath: filename, webviewpath: image.webPath };
+  }
+
+  private async readAsBase64(cameraPhoto: Photo) {
+
+    const response = await fetch(cameraPhoto.webPath!);
+    const blob = await response.blob();
+
+    return await this.convertBlobToBase64(blob) as string;
+  }
+
+  convertBlobToBase64 = (blob: Blob) => new Promise((resolve, reject) => {
+    const reader = new FileReader;
+    reader.onerror = reject;
+    reader.onload = () => {
+      resolve(reader.result);
+    };
+    reader.readAsDataURL(blob);
+  });
 
 
   async logout() {
@@ -83,4 +130,9 @@ export class ProfilepagePage implements OnInit {
     await alert.present();
   }
 
+}
+
+export interface Photos {
+  filepath: string,
+  webviewpath: string;
 }
