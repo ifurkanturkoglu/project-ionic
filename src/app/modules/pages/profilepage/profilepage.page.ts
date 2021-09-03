@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 import { ActionSheetController, AlertController } from '@ionic/angular';
 
 @Component({
@@ -15,7 +16,7 @@ export class ProfilepagePage implements OnInit {
   ngOnInit() {
   }
 
-  async takePhoto() {
+  async setPhoto() {
 
     const actionSheet = await this.actionSheetController.create({
       header: 'Profil Fotoğrafını Düzenle',
@@ -24,29 +25,36 @@ export class ProfilepagePage implements OnInit {
         text: 'Fotoğraf Çek',
         role: 'takePhoto',
         icon: 'camera',
-        handler: () => {
-          console.log('Delete clicked');
+        handler: async () => {
+          const image = await Camera.getPhoto({
+            quality: 100,
+            allowEditing: true,
+            resultType: CameraResultType.Uri,
+            source: CameraSource.Camera
+          });
         }
       }, {
         text: 'Galeriden Seç',
         role: 'getPhoto',
         icon: 'images',
-        handler: () => {
-          console.log('Share clicked');
+        handler: async () => {
+          const image = await Camera.getPhoto({
+            quality: 100,
+            allowEditing: true,
+            resultType: CameraResultType.Uri,
+            source: CameraSource.Photos
+          });
         }
-      },   {
+      }, {
         text: 'Kapat',
         icon: 'close',
         role: 'cancel',
         handler: () => {
-          console.log('Cancel clicked');
+
         }
       }]
     });
     await actionSheet.present();
-
-    const { role } = await actionSheet.onDidDismiss();
-    console.log('onDidDismiss resolved with role', role);
   }
 
 

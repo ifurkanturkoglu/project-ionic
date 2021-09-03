@@ -34,14 +34,14 @@
           <span>İstatistikler</span>
         </ion-button>
         <br>
+        <ion-button expand="block" [routerLink]="['/groups']" (click)="closeCustom()">
+          <ion-icon name="chatbox-ellipses" style="left: 10px; position: fixed; font-size: 28px;"></ion-icon>
+          <span>Mesajlar</span>
+        </ion-button>        
+        <br>
         <ion-button expand="block" (click)="closeCustom()">
           <i class="fas fa-calendar-alt"></i>
           <span>Ajandam</span>
-        </ion-button>
-        <br>
-        <ion-button expand="block" [routerLink]="['/groups']" (click)="closeCustom()">
-          <i class="fas fa-users"></i>
-          <span>Gruplar</span>
         </ion-button>
         <br>
         <ion-button expand="block" [routerLink]="['/options']" (click)="closeCustom()">

@@ -7,16 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GroupsPage implements OnInit {
   person: any[]=['Furkan','Mehmet','Betül','Hasan'];
-  groups: any[]=['DDL','FFSQUAD','Staj'];
+  groups: any[]=['DDL','FFSQUAD','Staj']
   controller=true;
-  searchTerm: string;
   constructor() { }
 
   ngOnInit() {
   }
   groupsChange(){
     this.controller =!this.controller;
-    console.log(this.controller);
+    console.log(this.controller)
   }
-
 }
