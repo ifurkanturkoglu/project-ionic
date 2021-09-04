@@ -9,7 +9,7 @@ export class GroupsPage implements OnInit {
   person: any[]=['Furkan','Mehmet','Betül','Hasan'];
   groups: any[]=['DDL','FFSQUAD','Staj'];
   controller=true;
-  searchTerm: string;
+  searchTerm: string ;
   constructor() { }
 
   ngOnInit() {

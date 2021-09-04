@@ -14,7 +14,7 @@
 
 <ion-content>
 
-<ion-searchbar placeholder="Kullanıcı Ara" [(ngModel)]="searchTerm" showClearButton="focus" animated ></ion-searchbar>
+<ion-searchbar placeholder="Kullanıcı Ara" [(ngModel)]="searchTerm" showClearButton="focus" animated="true" ></ion-searchbar>
 
   <ion-segment (ionChange)="groupsChange()" value="Kisiler" swipeGesture="true" >
     <ion-segment-button value="Kisiler">
@@ -28,27 +28,29 @@
   </ion-segment>
 
   <ion-list *ngIf="controller">
-
-    <ion-button *ngFor='let a of person | filter: searchTerm' expand="full" >
-      <ion-avatar style="left: 0; position: absolute; width: 53px; height: 53px;">
-        <img
-          src="https://firebasestorage.googleapis.com/v0/b/testmanager-fb88a.appspot.com/o/users%2FyFrzbhpgauch7ixXPvFucmrKCzQ2%2FprofilePicture%2FprofileImg?alt=media&token=65b7ca3b-5768-4748-ae23-18c48739cb33">
-      </ion-avatar>
-      <ion-label style="left: 79px; position: absolute; max-width: 200px; overflow: auto; color: white;">{{a}}</ion-label>
-    </ion-button>
+<ion-item  *ngFor='let a of person | filter: searchTerm'>
+  <ion-button expand="full" >
+    <ion-avatar style="left: 0; position: absolute; width: 53px; height: 53px;">
+      <img
+        src="https://firebasestorage.googleapis.com/v0/b/testmanager-fb88a.appspot.com/o/users%2FyFrzbhpgauch7ixXPvFucmrKCzQ2%2FprofilePicture%2FprofileImg?alt=media&token=65b7ca3b-5768-4748-ae23-18c48739cb33">
+    </ion-avatar>
+    <ion-label style="left: 79px; position: absolute; max-width: 200px; overflow: auto; color: white;">{{a}}</ion-label>
+  </ion-button>
+</ion-item>
+    
 
   </ion-list>
 
   <ion-list *ngIf="!controller">
-
-    <ion-button *ngFor='let a of groups | filter: searchTerm' expand="full"  >
-      <ion-avatar style="left: 0; position: absolute; width: 53px; height: 53px;">
-        <img
-          src="https://firebasestorage.googleapis.com/v0/b/testmanager-fb88a.appspot.com/o/users%2FyFrzbhpgauch7ixXPvFucmrKCzQ2%2FprofilePicture%2FprofileImg?alt=media&token=65b7ca3b-5768-4748-ae23-18c48739cb33">
-      </ion-avatar>
-      <ion-label style="left: 79px; position: absolute; max-width: 200px; overflow: auto; color: white;">{{a}}</ion-label>
-    </ion-button>
-
+<ion-item *ngFor='let a of groups | filter: searchTerm'>
+  <ion-button  expand="full"  >
+    <ion-avatar style="left: 0; position: absolute; width: 53px; height: 53px;">
+      <img
+        src="https://firebasestorage.googleapis.com/v0/b/testmanager-fb88a.appspot.com/o/users%2FyFrzbhpgauch7ixXPvFucmrKCzQ2%2FprofilePicture%2FprofileImg?alt=media&token=65b7ca3b-5768-4748-ae23-18c48739cb33">
+    </ion-avatar>
+    <ion-label style="left: 79px; position: absolute; max-width: 200px; overflow: auto; color: white;">{{a}}</ion-label>
+  </ion-button>
+</ion-item>   
   </ion-list>
 
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">

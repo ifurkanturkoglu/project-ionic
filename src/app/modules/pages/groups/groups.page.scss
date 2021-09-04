@@ -20,6 +20,8 @@ ion-item{
 ion-list{
   padding: 0;
   background: none;
+  margin-left: -13px;
+  margin-right: -14px;
 }
 ion-segment-button{
   --color-checked: rgb(0 0 0 / 22%);
@@ -34,4 +36,5 @@ ion-button{
   border-radius: 5px;
   --background: rgb(238,174,202);
   --background: linear-gradient(-30deg, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+  width: 100%;
 }
