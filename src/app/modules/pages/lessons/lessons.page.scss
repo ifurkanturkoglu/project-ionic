@@ -6,7 +6,8 @@ ion-content {
   min-height: 500px;
   min-width: 320px;
 }
-ion-header{
+
+ion-header {
   background: rgb(152 186 225);
   color: white;
 }
@@ -17,63 +18,54 @@ ion-slides {
 
 ion-slide {
   perspective: 600px;
-}
-
-ion-card, ion-slide {
-  //height: auto;
-  //height: calc(100% - 50px);
+  position: relative;
   max-width: 100%;
-  width: 80%;  
+  width: 80%;
+  transition: all 1s ease;
+  transform: perspective(600px);
+  transform-style: preserve-3d;
 }
 
 ion-card {
   background-color: black;
   color: white;
+  position: absolute;
+  transition: all 0.5s ease;
+  transform: perspective(600px);
+  transform-style: preserve-3d;
 }
 
-ion-card-content {  
+ion-card-content {
   //height: auto;
   //height: calc(100% - 150px);
-  background-color: whitesmoke;  
+  background-color: whitesmoke;
 }
 
 ion-card-title {
   color: white;
 }
 
-.opendraw {  
-  height: calc(100% - 150px);  
+.opendraw {
+  height: calc(100% - 150px);
 }
 
-.closedraw {    
+.closedraw {
   height: auto;
 }
 
-.anim {
-  animation: myanim 1s;
+.front {
+  backface-visibility: hidden;
 }
 
-@keyframes myanim {
-  from {
-    transform: rotateY(180deg);
-  }
+.back {
+  width: 90%;  
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
 
-  to {
-    transform: rotateY(0deg);
-  }
-}
-
-.anim2 {
-  animation: myanim2 1s;
-}
-
-@keyframes myanim2 {
-  from {
-    transform: rotateY(180deg);
-  }
-
-  to {
-    transform: rotateY(0deg);
+  ion-card-content {
+    height: calc(100% - 100px);
+    color: black;
+    background-color: #fafafa;
   }
 }
 
@@ -87,7 +79,6 @@ ion-button {
   --border-color: white;
   --border-radius: 50%;
   --ripple-color: darkgrey;
-  
 }
 
 ion-card-content, ion-card-header {
@@ -126,7 +117,7 @@ hr {
   padding: 0;
   margin: 0 0 0 10px;
   z-index: 9;
-  --border-width: 0px;  
+  --border-width: 0px;
 }
 
 ion-icon {
