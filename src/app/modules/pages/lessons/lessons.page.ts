@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IonSlides } from '@ionic/angular';
+import { Router } from '@angular/router';
+import { AlertController, IonSlides } from '@ionic/angular';
 
 @Component({
   selector: 'app-lessons',
@@ -16,18 +17,59 @@ export class LessonsPage implements OnInit {
     "https://firebasestorage.googleapis.com/v0/b/testmanager-fb88a.appspot.com/o/5.S%C4%B1n%C4%B1f%2FT%C3%BCrk%C3%A7e%2FC%C3%BCmlede%20Anlam%2FTest%201%2FSoru%205.png?alt=media&token=3c6b6b14-cf8c-4cea-9b51-9f8148852ff0"
   ];
 
-  answers: any[] = [];
+  answers: any[] = []
+  corrects: any[] = ["a", "c", "d", "d", "b"];
+  true: number = 0;
+  false: number = 0;
+  score: any;
 
-  constructor() { }
+  constructor(private alertController: AlertController, private router: Router) { }
 
   ngOnInit() {
   }
 
   @ViewChild('slides') slide: IonSlides;
 
-  next(que: number, ans: string) {
-    this.answers.push({ que: que, ans: ans });
-    this.slide.slideNext();  
+  async next(que: number, ans: string) {
+
+    if (this.answers.length < this.questions.length) {
+      this.answers.push({ que: que, ans: ans });
+
+      if (this.answers.length == 5) {
+        this.answers.forEach(f => {
+          if (f.ans == this.corrects[f.que - 1]) this.true++;
+          if (f.ans != this.corrects[f.que - 1]) this.false++;
+        });
+      }
+      this.slide.slideNext();
+    }
+    if (this.answers.length == this.questions.length) {
+      this.score = (100 / this.questions.length) * this.true;
+
+      const alert = await this.alertController.create({
+        cssClass: 'my-custom-class',
+        header: 'Sonuçlarınız',
+        message: `Doğru Sayısı: ${this.true} \n Yanlış Sayısı: ${this.false} \n Puanınız: ${this.score}`,
+        buttons: [
+          {
+            text: 'Tekrar',
+            role: 'cancel',
+            cssClass: 'secondary',
+            handler: (blah) => {
+              //this.slide.slideTo(0);
+              this.answers = [];
+            }
+          }, {
+            text: 'Bitir',            
+            handler: () => {
+              this.router.navigateByUrl("");
+            }
+          }
+        ]
+      });
+
+      await alert.present();
+    }
   }
 
   flip: boolean = true;
@@ -53,7 +95,7 @@ export class LessonsPage implements OnInit {
     else {
       document.getElementById('card' + idx).className = "md card-content-md hydrated closedraw";
       this.draw = !this.draw;
-    }    
+    }
   }
 
   slideOpts = {
