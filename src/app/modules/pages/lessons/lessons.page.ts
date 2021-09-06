@@ -35,41 +35,44 @@ export class LessonsPage implements OnInit {
     if (this.answers.length < this.questions.length) {
       this.answers.push({ que: que, ans: ans });
 
-      if (this.answers.length == 5) {
+      if (this.answers.length == this.questions.length) {
         this.answers.forEach(f => {
           if (f.ans == this.corrects[f.que - 1]) this.true++;
           if (f.ans != this.corrects[f.que - 1]) this.false++;
         });
+        this.score = (100 / this.questions.length) * this.true;
+
+        const alert = await this.alertController.create({
+          cssClass: 'results',
+          header: 'Sonuçlarınız',
+          message: `Doğru Sayısı: <span>${this.true}</span><br>
+            Yanlış Sayısı: <span>${this.false}</span><br>
+            Puanınız: <span>${this.score}</span>`,
+          buttons: [
+            {
+              text: 'Tekrar',
+              cssClass: 'tekrar',
+              handler: () => {
+                //this.slide.slideTo(0, 0).then(t => { setTimeout(() => { }, 250); });
+                this.answers = [];
+                this.true = 0;
+                this.false = 0;
+                this.score = 0;
+              }
+            }, {
+              text: 'Bitir',
+              cssClass: 'bitir',
+              handler: () => {
+                this.router.navigateByUrl("");
+              }
+            }
+          ]
+        });
+
+        await alert.present();
       }
-      this.slide.slideNext();
     }
-    if (this.answers.length == this.questions.length) {
-      this.score = (100 / this.questions.length) * this.true;
-
-      const alert = await this.alertController.create({
-        cssClass: 'my-custom-class',
-        header: 'Sonuçlarınız',
-        message: `Doğru Sayısı: ${this.true} \n Yanlış Sayısı: ${this.false} \n Puanınız: ${this.score}`,
-        buttons: [
-          {
-            text: 'Tekrar',
-            role: 'cancel',
-            cssClass: 'secondary',
-            handler: (blah) => {
-              //this.slide.slideTo(0);
-              this.answers = [];
-            }
-          }, {
-            text: 'Bitir',            
-            handler: () => {
-              this.router.navigateByUrl("");
-            }
-          }
-        ]
-      });
-
-      await alert.present();
-    }
+    this.slide.slideNext();
   }
 
   flip: boolean = true;
