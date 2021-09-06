@@ -29,6 +29,10 @@ const routes: Routes = [
   {
     path: 'options',
     loadChildren: () => import('./modules/pages/options/options.module').then( m => m.OptionsPageModule)
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./modules/pages/login/login.module').then( m => m.LoginPageModule)
   }
 
 ];
