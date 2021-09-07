@@ -19,18 +19,21 @@ export class LessonsPage implements OnInit {
 
   answers: any[] = []
   corrects: any[] = ["a", "c", "d", "d", "b"];
+  buttons: any[] = ["A","B","C","D"];
   true: number = 0;
   false: number = 0;
   score: any;
 
   constructor(private alertController: AlertController, private router: Router) { }
 
-  ngOnInit() {
+  ngOnInit() {    
   }
 
-  @ViewChild('slides') slide: IonSlides;
-
+  @ViewChild('slides', { static: true }) slide: IonSlides;
+ 
   async next(que: number, ans: string) {
+   
+    ans = ans.toLowerCase();
 
     if (this.answers.length < this.questions.length) {
       this.answers.push({ que: que, ans: ans });
@@ -52,8 +55,7 @@ export class LessonsPage implements OnInit {
             {
               text: 'Tekrar',
               cssClass: 'tekrar',
-              handler: () => {
-                //this.slide.slideTo(0, 0).then(t => { setTimeout(() => { }, 250); });
+              handler: () => {                
                 this.answers = [];
                 this.true = 0;
                 this.false = 0;
@@ -63,7 +65,7 @@ export class LessonsPage implements OnInit {
               text: 'Bitir',
               cssClass: 'bitir',
               handler: () => {
-                this.router.navigateByUrl("");
+                this.router.navigateByUrl("/mainpage");
               }
             }
           ]
@@ -73,7 +75,10 @@ export class LessonsPage implements OnInit {
       }
     }
     this.slide.slideNext();
+    
   }
+
+ 
 
   flip: boolean = true;
 
@@ -104,6 +109,7 @@ export class LessonsPage implements OnInit {
   slideOpts = {
     initialSlide: 0,
     speed: 400,
+    direction: 'vertical'
   };
 
 }

@@ -1,15 +1,16 @@
+ion-header {
+  height: 50px;
+  background: rgb(152 186 225);
+  color: white;
+}
+
 ion-content {
   height: 100%;
   width: 100%;
-  max-height: 100vh;
+  max-height: 100%;
   max-width: 100%;
   min-height: 500px;
   min-width: 320px;
-}
-
-ion-header {
-  background: rgb(152 186 225);
-  color: white;
 }
 
 ion-slides {
@@ -20,7 +21,7 @@ ion-slide {
   perspective: 600px;
   position: relative;
   max-width: 100%;
-  width: 80%;
+  width: 100%;
   transition: all 1s ease;
   transform: perspective(600px);
   transform-style: preserve-3d;
@@ -58,7 +59,7 @@ ion-card-title {
 }
 
 .back {
-  width: 90%;  
+  width: 90%;
   backface-visibility: hidden;
   transform: rotateY(180deg);
 

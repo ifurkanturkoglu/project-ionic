@@ -26,10 +26,7 @@
           </ion-button>
         </ion-card-header>
         <hr>
-        <ion-button (click)="next(i+1,'a')">A</ion-button>
-        <ion-button (click)="next(i+1,'b')">B</ion-button>
-        <ion-button (click)="next(i+1,'c')">C</ion-button>
-        <ion-button (click)="next(i+1,'d')">D</ion-button>
+        <ion-button *ngFor="let btn of buttons" (click)="next(i+1,btn)">{{btn | uppercase}}</ion-button>
       </ion-card>
 
       <ion-card class="back" [attr.id]="'backid'+i">
