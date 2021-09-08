@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { MenuController } from '@ionic/angular';
 import { Router } from '@angular/router';
-import { Network } from '@capacitor/network';
+
+
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -19,9 +20,7 @@ export class AppComponent {
   closeCustom(){
     this.menu.close('menuBar');
   }
-  network(){
-    const a = Network.getStatus();
-    a.then(res => console.log(res));
 
-  }
+
 }
+

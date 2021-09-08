@@ -1,4 +1,4 @@
-import { IonSlides } from '@ionic/angular';
+import { IonSlides, MenuController } from '@ionic/angular';
 import { Component, OnInit, ViewChild } from '@angular/core';
 
 @Component({
@@ -9,23 +9,23 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 export class MainpagePage implements OnInit {
 
 
-  constructor() { }
-  
-  ngOnInit() {
-    
+  constructor(private menu: MenuController) { }
 
+  ngOnInit() {
+
+    this.menu.enable(true, 'menuBar');
   }
-  
+
   sliderAuto(slides){
     slides.startAutoplay();
   }
-  
-  
+
+
 
   // eslint-disable-next-line @typescript-eslint/member-ordering
   slideOpts = {
     slidesPerView: 1,
     initialSlide: 0,
-    speed: 400,    
+    speed: 400,
   };
 }

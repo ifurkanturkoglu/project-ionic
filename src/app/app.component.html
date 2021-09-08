@@ -14,7 +14,7 @@
 
     <ion-content>
       <ion-list style="background: tertiary;">
-        <ion-button expand="block" [routerLink]="['']" (click)="closeCustom();network()" >
+        <ion-button expand="block" [routerLink]="['']" (click)="closeCustom()" >
           <i class="fas fa-home"></i>
           <span>Anasayfa</span>
         </ion-button>
@@ -37,7 +37,7 @@
         <ion-button expand="block" [routerLink]="['/groups']" (click)="closeCustom()">
           <ion-icon name="chatbox-ellipses" style="left: 10px; position: fixed; font-size: 28px;"></ion-icon>
           <span>Mesajlar</span>
-        </ion-button>        
+        </ion-button>
         <br>
         <ion-button expand="block" (click)="closeCustom()">
           <i class="fas fa-calendar-alt"></i>
