@@ -1,0 +1,26 @@
+ion-content {    
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    display: flex;    
+    justify-content: center;
+    align-items: center;
+}
+
+ion-item {
+    width: 80%;
+    left: 10%;
+    top: 20%;
+    margin-top: 3%;
+    border-radius: 8px;
+}
+
+ion-button {
+    margin: 2%;
+    position: relative;
+    left: 16%;
+    top: 22%;
+}

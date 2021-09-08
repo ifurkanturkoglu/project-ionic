@@ -1,9 +1,35 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>register</ion-title>
-  </ion-toolbar>
-</ion-header>
 
 <ion-content>
+  <ion-item>
+    <ion-label position="floating">İsminiz Soyisminiz</ion-label>
+    <ion-input type="text" [ngModel]="fullname"></ion-input>
+  </ion-item>
 
+  <ion-item>
+    <ion-label position="floating">E-Posta Adresiniz</ion-label>
+    <ion-input type="email" [ngModel]="email"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Şifreniz</ion-label>
+    <ion-input type="password" [ngModel]="password"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Sınıf Seçiniz</ion-label>
+    <ion-select [(ngModel)]="class" okText="Seç" cancelText="Kapat">
+      <ion-select-option value="5">5. Sınıf</ion-select-option>
+      <ion-select-option value="6">6. Sınıf</ion-select-option>
+      <ion-select-option value="7">7. Sınıf</ion-select-option>
+      <ion-select-option value="8">8. Sınıf</ion-select-option>
+      <ion-select-option value="9">9. Sınıf</ion-select-option>
+      <ion-select-option value="10">10. Sınıf</ion-select-option>
+      <ion-select-option value="11">11. Sınıf</ion-select-option>
+      <ion-select-option value="12">12. Sınıf</ion-select-option>
+      <ion-select-option value="13">Mezun</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-button (click)="toLogin()" color="success">Giriş Yap</ion-button>
+  <ion-button (click)="signin()" color="primary">Kayıt Ol</ion-button>
 </ion-content>

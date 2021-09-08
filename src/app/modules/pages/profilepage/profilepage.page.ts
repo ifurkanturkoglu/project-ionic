@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
 import { Directory, Filesystem } from '@capacitor/filesystem';
@@ -11,14 +12,51 @@ import { ActionSheetController, AlertController } from '@ionic/angular';
 })
 export class ProfilepagePage implements OnInit {
 
+  fullname:any = "Ad Soyad";
+  class:any = "12";
+
   public photos: Photos[] = [];
   private Photo_Storage: string = "photos";
 
   constructor(
     public alertController: AlertController,
-    public actionSheetController: ActionSheetController) { }
+    public actionSheetController: ActionSheetController,
+    private router: Router) { }
 
   ngOnInit() {
+  }
+
+  async setProfileInfos(){
+    const alert = await this.alertController.create({
+      cssClass: 'my-custom-class',
+      header: 'Profil Bilgilerini Düzenle',
+      inputs: [
+        {          
+          type: 'text',
+          value: `${this.fullname}`
+        },
+        {          
+          type: 'text',          
+          value: `${this.class}`        
+        }        
+      ],
+      buttons: [
+        {
+          text: 'İptal',          
+          cssClass: 'secondary',
+          handler: () => {
+            
+          }
+        }, {
+          text: 'Kaydet',
+          handler: () => {
+            
+          }
+        }
+      ]
+    });
+
+    await alert.present();
   }
 
   async setPhoto() {
@@ -114,14 +152,12 @@ export class ProfilepagePage implements OnInit {
         {
           text: 'Evet',
           cssClass: 'secondary',
-          handler: (blah) => {
-            console.log('Confirm Okay');
+          handler: () => {
+            this.router.navigateByUrl("/login");
           }
         }, {
-          text: 'Hayır',
-          role: 'cancel',
-          handler: () => {
-            console.log('Confirm Cancel: blah');
+          text: 'Hayır',          
+          handler: () => {            
           }
         }
       ]
