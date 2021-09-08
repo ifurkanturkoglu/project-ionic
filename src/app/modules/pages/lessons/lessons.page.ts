@@ -19,20 +19,20 @@ export class LessonsPage implements OnInit {
 
   answers: any[] = []
   corrects: any[] = ["a", "c", "d", "d", "b"];
-  buttons: any[] = ["A","B","C","D"];
+  buttons: any[] = ["A", "B", "C", "D"];
   true: number = 0;
   false: number = 0;
   score: any;
 
   constructor(private alertController: AlertController, private router: Router) { }
 
-  ngOnInit() {    
+  ngOnInit() {
   }
 
   @ViewChild('slides', { static: true }) slide: IonSlides;
- 
+
   async next(que: number, ans: string) {
-   
+
     ans = ans.toLowerCase();
 
     if (this.answers.length < this.questions.length) {
@@ -55,7 +55,8 @@ export class LessonsPage implements OnInit {
             {
               text: 'Tekrar',
               cssClass: 'tekrar',
-              handler: () => {                
+              handler: () => {
+                this.slide.slideTo(0, 0);
                 this.answers = [];
                 this.true = 0;
                 this.false = 0;
@@ -75,10 +76,10 @@ export class LessonsPage implements OnInit {
       }
     }
     this.slide.slideNext();
-    
+
   }
 
- 
+
 
   flip: boolean = true;
 
