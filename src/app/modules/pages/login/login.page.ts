@@ -2,7 +2,6 @@ import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { MenuController, AlertController } from '@ionic/angular';
 import { Network } from '@capacitor/network';
-import { SQLite, SQLiteObject } from '@ionic-native/sqlite/ngx';
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
