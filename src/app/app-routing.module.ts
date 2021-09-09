@@ -41,6 +41,10 @@ const routes: Routes = [
     path: 'register',
     loadChildren: () => import('./modules/pages/register/register.module').then(m => m.RegisterPageModule)
   },
+  {
+    path: 'password',
+    loadChildren: () => import('./modules/pages/options/password/password.module').then(m => m.PasswordPageModule)
+  }
   
 
 
