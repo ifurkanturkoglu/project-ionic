@@ -31,11 +31,14 @@ export class ProfilepagePage implements OnInit {
       cssClass: 'my-custom-class',
       header: 'Profil Bilgilerini Düzenle',
       inputs: [
-        {          
+        { 
+          label: 'Ad - Soyad',
+          id: 'Ad',                 
           type: 'text',
           value: `${this.fullname}`
         },
-        {          
+        {     
+          label: 'Sınıfınız',     
           type: 'text',          
           value: `${this.class}`        
         }        
@@ -45,12 +48,11 @@ export class ProfilepagePage implements OnInit {
           text: 'İptal',          
           cssClass: 'secondary',
           handler: () => {
-            
+          
           }
         }, {
           text: 'Kaydet',
-          handler: () => {
-            
+          handler: () => {            
           }
         }
       ]

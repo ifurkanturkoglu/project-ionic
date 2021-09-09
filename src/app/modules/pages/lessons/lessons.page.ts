@@ -20,8 +20,10 @@ export class LessonsPage implements OnInit {
   answers: any[] = []
   corrects: any[] = ["a", "c", "d", "d", "b"];
   buttons: any[] = ["A", "B", "C", "D"];
+  results: string = "";
   true: number = 0;
   false: number = 0;
+  empty: number = 0;
   score: any;
 
   constructor(private alertController: AlertController, private router: Router) { }
@@ -34,6 +36,7 @@ export class LessonsPage implements OnInit {
   async next(que: number, ans: string) {
 
     ans = ans.toLowerCase();
+    this.results = this.results + que +". Soru: "+ ans.toUpperCase() + "<br>";
 
     if (this.answers.length < this.questions.length) {
       this.answers.push({ que: que, ans: ans });
@@ -41,22 +44,23 @@ export class LessonsPage implements OnInit {
       if (this.answers.length == this.questions.length) {
         this.answers.forEach(f => {
           if (f.ans == this.corrects[f.que - 1]) this.true++;
-          if (f.ans != this.corrects[f.que - 1]) this.false++;
+          else if (f.ans != this.corrects[f.que - 1]) this.false++;
+          else this.empty++;
         });
         this.score = (100 / this.questions.length) * this.true;
 
         const alert = await this.alertController.create({
           cssClass: 'results',
-          header: 'Sonuçlarınız',
-          message: `Doğru Sayısı: <span>${this.true}</span><br>
+          header: `Puanınız: ${this.score}`,
+          message: `${this.results} <br>Doğru Sayısı: <span>${this.true}</span><br>
             Yanlış Sayısı: <span>${this.false}</span><br>
-            Puanınız: <span>${this.score}</span>`,
+            Boş Sayısı: <span>${this.empty}</span><br>`,
           buttons: [
             {
               text: 'Tekrar',
               cssClass: 'tekrar',
               handler: () => {
-                this.slide.slideTo(0, 0);
+                this.slide.slideTo(0);
                 this.answers = [];
                 this.true = 0;
                 this.false = 0;
