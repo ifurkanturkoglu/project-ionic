@@ -5,8 +5,9 @@
     "\\src\\app",
     "\\src\\app\\modules",
     "\\src\\app\\modules\\pages",
-    "\\src\\app\\modules\\pages\\lessons"
+    "\\src\\app\\modules\\pages\\lessons",
+    "\\src\\app\\modules\\pages\\options",
+    "\\src\\app\\modules\\pages\\profilepage"
   ],
-  "SelectedNode": "\\src\\app\\modules\\pages\\lessons\\lessons.page.ts",
   "PreviewInSolutionExplorer": false
 }
