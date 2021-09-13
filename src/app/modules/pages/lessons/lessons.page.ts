@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-import { AlertController, IonSlides } from '@ionic/angular';
+import { AlertController, IonSlides, ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-lessons',
@@ -26,7 +26,10 @@ export class LessonsPage implements OnInit {
   empty: number = 0;
   score: any;
 
-  constructor(private alertController: AlertController, private router: Router) { }
+  a: any = "bookmark-outline";
+
+  constructor(private alertController: AlertController, private router: Router,
+    private toastController: ToastController) { }
 
   ngOnInit() {
   }
@@ -36,7 +39,7 @@ export class LessonsPage implements OnInit {
   async next(que: number, ans: string) {
 
     ans = ans.toLowerCase();
-    this.results = this.results + que +". Soru: "+ ans.toUpperCase() + "<br>";
+    this.results = this.results + que + ". Soru: " + ans.toUpperCase() + "<br>";
 
     if (this.answers.length < this.questions.length) {
       this.answers.push({ que: que, ans: ans });
@@ -57,14 +60,10 @@ export class LessonsPage implements OnInit {
             Boş Sayısı: <span>${this.empty}</span><br>`,
           buttons: [
             {
-              text: 'Tekrar',
-              cssClass: 'tekrar',
+              text: 'Göz At',
+              cssClass: 'gozat',
               handler: () => {
-                this.slide.slideTo(0);
-                this.answers = [];
-                this.true = 0;
-                this.false = 0;
-                this.score = 0;
+
               }
             }, {
               text: 'Bitir',
@@ -93,21 +92,28 @@ export class LessonsPage implements OnInit {
       this.flip = !this.flip;
     }
     else {
-      document.getElementById("slide" + idx).style.transform = "rotateY(0deg)";
+      document.getElementById("slide" + idx).style.transform = "rotateY(360deg)";
       this.flip = !this.flip;
     }
   }
 
-  draw: boolean = true;
+  saved: boolean = false;
+  async toast(idx: number) {
+    const toast = await this.toastController.create({
+      message: 'Kaydedildi. Profil Sayfasından Ulaşabilirsiniz.',
+      duration: 2000,
+      cssClass: '--color: red',
+    });
+    toast.present();
 
-  drawScreen(idx: number) {
-    if (this.draw) {
-      document.getElementById('card' + idx).className = "md card-content-md hydrated opendraw";
-      this.draw = !this.draw;
+    if (!this.saved) {
+      document.getElementById('saved' + idx).attributes.getNamedItem("name").value = "bookmark";
+      this.saved = !this.saved;
     }
-    else {
-      document.getElementById('card' + idx).className = "md card-content-md hydrated closedraw";
-      this.draw = !this.draw;
+
+    if (this.saved) {
+      document.getElementById('saved' + idx).attributes.getNamedItem("name").value = "bookmark-outline";
+      this.saved = !this.saved;
     }
   }
 

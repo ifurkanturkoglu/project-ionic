@@ -46,14 +46,6 @@ ion-card-title {
   color: white;
 }
 
-.opendraw {
-  height: calc(100% - 150px);
-}
-
-.closedraw {
-  height: auto;
-}
-
 .front {
   backface-visibility: hidden;
 }
@@ -108,17 +100,20 @@ hr {
   --ripple-color: none;
 }
 
-.editbtn {
+.saved {
   position: absolute;
   left: 0;
   bottom: 0;
-  width: 50px;
-  height: 100%;
-  color: aliceblue;
+  width: 30px;
+  height: 25px;
   padding: 0;
+  z-index: 99;
   margin: 0 0 0 10px;
-  z-index: 9;
-  --border-width: 0px;
+  --border-width: 0px; 
+}
+
+.toast {
+  --color: red;
 }
 
 ion-icon {

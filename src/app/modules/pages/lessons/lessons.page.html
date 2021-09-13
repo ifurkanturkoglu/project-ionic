@@ -19,7 +19,7 @@
         </ion-card-content>
         <hr>
         <ion-card-header>
-          <ion-button class="editbtn" (click)="drawScreen(i)"><ion-icon name="create-outline"></ion-icon></ion-button>
+          <ion-button class="saved" (click)="toast(i)"><ion-icon [attr.id]="'saved'+i" name="bookmark-outline"></ion-icon></ion-button>
           <ion-card-title>Soru {{i+1}}</ion-card-title>
           <ion-button class="infobtn" (click)="info(i)">
             <ion-icon name="information-circle-outline"></ion-icon>
